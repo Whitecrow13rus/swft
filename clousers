@@ -1,0 +1,19 @@
+var array: [String]=[]
+func nameAddArray (name:String) {
+    array.append(name)
+    let sorted = array.sorted { (s1, s2) -> Bool in return s1<s2}
+    print(sorted)
+}
+nameAddArray(name: "Artem")
+nameAddArray(name: "Sergey")
+nameAddArray(name: "Bogdan")
+
+func getBinaryResult (a: Int, b: Int, binarufunc:(Int, Int)-> Int) -> Int {
+    return binarufunc(a, b)
+}
+var result = getBinaryResult(a: 6, b: 8, binarufunc: {$0 + $1} )
+
+var result1 = getBinaryResult(a: 4, b: 5, binarufunc: {$0 - $1})
+
+var result3 = getBinaryResult(a: 10, b: 5, binarufunc: {(a:Int,b:Int) -> Int in return a * b})
+
